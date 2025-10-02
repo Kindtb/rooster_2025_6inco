@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComboboxManager.cs" />
     <Compile Include="CsvReader.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
