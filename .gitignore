@@ -1,0 +1,59 @@
+# Build-resultaten
+bin/
+obj/
+[Bb]uild/
+[Ll]og/
+[Ll]ogs/
+
+# User-specifieke bestanden
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Code
+.vscode/
+
+# Visual Studio instellingen
+.vs/
+
+# NuGet-pakketten
+*.nupkg
+*.snupkg
+*.nuspec
+packages/
+*.nuget.props
+*.nuget.targets
+
+# Publish/Deploy bestanden
+*.pubxml
+*.pubxml.user
+*.publishsettings
+
+# Testresultaten
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+# Backup & andere tijdelijke bestanden
+*.bak
+*.tmp
+*.swp
+*.swm
+*.orig
+*.cache
+
+# ReSharper
+_ReSharper*/
+*.DotSettings.user
+
+# Rider
+.idea/
+
+# dotnet tools
+.dotnet/
+
+# Secret config
+secrets.json
+appsettings.Development.json
