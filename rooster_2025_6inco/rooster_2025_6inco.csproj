@@ -53,6 +53,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Klas.cs" />
+    <Compile Include="Layout.cs" />
     <Compile Include="Leerkracht.cs" />
     <Compile Include="Lokaal.cs" />
     <Compile Include="Program.cs" />
