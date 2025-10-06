@@ -15,6 +15,8 @@ namespace rooster_2025_6inco
 
         public Layout(Form1 form)
         {
+            form.Size = new Size(850, 600);
+
             comboboxPanel.Location = new Point(10, 10);
             comboboxPanel.Size = new Size(800, 50);
             comboboxPanel.BorderStyle = BorderStyle.FixedSingle;
