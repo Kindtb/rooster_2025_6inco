@@ -52,11 +52,15 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Klas.cs" />
     <Compile Include="Leerkracht.cs" />
+    <Compile Include="Lokaal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoosterPanelManager.cs" />
     <Compile Include="RoosterFactory.cs" />
+    <Compile Include="CsvReader.cs" />
+    <Compile Include="ComboboxManager.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
