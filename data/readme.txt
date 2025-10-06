@@ -1,0 +1,1 @@
+move the data folder to bin/Debug
