@@ -55,7 +55,7 @@
     <Compile Include="Klas.cs" />
     <Compile Include="Layout.cs" />
     <Compile Include="Leerkracht.cs" />
-    <Compile Include="lesuur.cs" />
+    <Compile Include="Lesuur.cs" />
     <Compile Include="Lokaal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
