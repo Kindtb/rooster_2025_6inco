@@ -8,6 +8,10 @@ namespace rooster_2025_6inco
 {
     internal class Lokaal
     {
-
+        public string name;
+        public Lokaal(string name)
+        {
+            this.name = name;
+        }
     }
 }
