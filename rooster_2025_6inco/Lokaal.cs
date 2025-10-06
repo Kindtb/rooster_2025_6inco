@@ -8,5 +8,6 @@ namespace rooster_2025_6inco
 {
     internal class Lokaal
     {
+
     }
 }
