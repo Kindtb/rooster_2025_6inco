@@ -15,12 +15,12 @@ namespace rooster_2025_6inco
         public Form1()
         {
             InitializeComponent();
-            CsvReader reader = new CsvReader("data/rooster.txt");
-            Panel comboboxPanel = new Panel();
-            ComboboxManager comboboxManager = new ComboboxManager(comboboxPanel, csvReader);
+            Layout layout = new Layout(this);
 
-            Panel roosterPanel = new Panel();
-            RoosterPanelManager roosterPanelManager = new RoosterPanelManager(roosterPanel);
+            CsvReader reader = new CsvReader("data/rooster.txt");
+            ComboboxManager comboboxManager = new ComboboxManager(layout.getComboboxPanel(), csvReader);
+
+            RoosterPanelManager roosterPanelManager = new RoosterPanelManager(layout.getRoosterPanel(), comboboxManager);
 
         }
     }
