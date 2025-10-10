@@ -29,23 +29,31 @@ namespace rooster_2025_6inco
 
                 if (fields.Length < 7) continue; // skip malformed lines
 
-                classNames.Add(fields[1].Trim('"'));
-                teacherNames.Add(fields[2].Trim('"'));
-                classrooms.Add(fields[4].Trim('"'));
-                //klassen.Add(new Klas(fields[1].Trim('"')));
-                //leerkrachten.Add(new Leerkracht(fields[2].Trim('"')));
-                //lokalen.Add(new Lokaal(fields[4].Trim('"')));
+                if (classNames.Contains(fields[1].Trim('\'')))
+                {
+
+                }
+                else
+                {
+                    classNames.Add(fields[1].Trim('\''));
+                }
+                teacherNames.Add(fields[2].Trim('\''));
+                classrooms.Add(fields[4].Trim('\''));
+
+                /*klassen.Add(new Klas(fields[1].Trim('\'')));
+                leerkrachten.Add(new Leerkracht(fields[2].Trim('\'')));
+                lokalen.Add(new Lokaal(fields[4].Trim('\'')));*/
             }
 
             // Example: Output the lists
-            Console.WriteLine("Class Names:");
+            /*Console.WriteLine("Class Names:");
             classNames.ForEach(Console.WriteLine);
 
             Console.WriteLine("\nTeacher Names:");
             teacherNames.ForEach(Console.WriteLine);
 
             Console.WriteLine("\nClassrooms:");
-            classrooms.ForEach(Console.WriteLine);
+            classrooms.ForEach(Console.WriteLine);*/
         }
 
         // Simple CSV splitter (handles quoted fields)
