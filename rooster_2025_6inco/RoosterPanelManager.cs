@@ -9,11 +9,7 @@ namespace rooster_2025_6inco
 {
     internal class RoosterPanelManager
     {
-<<<<<<< HEAD
-        //lesuur[,] les = new lesuur[5, 7];
-=======
         Lesuur[,] les = new Lesuur[5, 7];
->>>>>>> 0d41e043c2f5fa21975e0c8a3fabce56d78aa30f
         public RoosterPanelManager(Panel panel, ComboboxManager comboboxManager) 
         {
             for (int i = 0; i < 5; i++)
