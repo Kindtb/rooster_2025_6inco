@@ -25,7 +25,7 @@ namespace rooster_2025_6inco
             comboboxManager.leerkrachtChanged += (sender, e) =>
             {
                 string leerkracht = "DBLE";
-                roosterPanelManager.toonLeerkrachtRooster(leerkracht);
+               // roosterPanelManager.toonLeerkrachtRooster(leerkracht);
             };
         }
     }
