@@ -13,8 +13,11 @@ namespace rooster_2025_6inco
         public List<Leerkracht> leerkrachten = new List<Leerkracht>();
         public List<Lokaal> lokalen = new List<Lokaal>();
 
+        private string filePath;
+
         public CsvReader(string filePath)
         {
+            this.filePath = filePath;
             var classNames = new List<string>();
             var teacherNames = new List<string>();
             var classrooms = new List<string>();
@@ -92,5 +95,24 @@ namespace rooster_2025_6inco
             return lokalen;
         }
 
+        public List<Les> getLessenVoorLeerkracht(string leerkracht)
+        {
+            List<Les> lessen = new List<Les> ();
+
+            foreach (var line in File.ReadLines(filePath))
+            {
+                // Skip empty lines
+                if (string.IsNullOrWhiteSpace(line)) continue;
+
+                // Split CSV, handle quoted commas
+                var fields = SplitCsv(line);
+
+                if (fields.Length < 7) continue; // skip malformed lines
+
+
+
+                return lessen;
+            }
+        }
     }
 }
