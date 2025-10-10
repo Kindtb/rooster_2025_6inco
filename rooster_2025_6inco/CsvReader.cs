@@ -40,14 +40,40 @@ namespace rooster_2025_6inco
                 {
                     classNames.Add(fields[1].Trim('\''));
                 }
-                teacherNames.Add(fields[2].Trim('\''));
-                classrooms.Add(fields[4].Trim('\''));
+                if (teacherNames.Contains(fields[2].Trim('\'')))
+                {
+
+                }
+                else
+                {
+                    teacherNames.Add(fields[2].Trim('\''));
+                }
+                if (classrooms.Contains(fields[4].Trim('\'')))
+                {
+
+                }
+                else
+                {
+                    classrooms.Add(fields[4].Trim('\''));
+                }
 
                 /*klassen.Add(new Klas(fields[1].Trim('\'')));
                 leerkrachten.Add(new Leerkracht(fields[2].Trim('\'')));
                 lokalen.Add(new Lokaal(fields[4].Trim('\'')));*/
             }
 
+            foreach (string klas in classNames)
+            {
+                klassen.Add(new Klas(klas));
+            }
+            foreach (string leerkracht in teacherNames)
+            {
+                leerkrachten.Add(new Leerkracht(leerkracht));
+            }
+            foreach (string lokaal in classrooms)
+            {
+                lokalen.Add(new Lokaal(lokaal));
+            }
             // Example: Output the lists
             /*Console.WriteLine("Class Names:");
             classNames.ForEach(Console.WriteLine);
@@ -68,7 +94,7 @@ namespace rooster_2025_6inco
 
             for (int i = 0; i < input.Length; i++)
             {
-                if (input[i] == '"')
+                if (input[i] == '\'')
                     inQuotes = !inQuotes;
                 else if (input[i] == ',' && !inQuotes)
                 {
