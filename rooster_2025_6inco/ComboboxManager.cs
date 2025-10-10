@@ -10,6 +10,7 @@ namespace rooster_2025_6inco
      
     internal class ComboboxManager
     {
+
         public event EventHandler<string> leerkrachtChanged;
         public event EventHandler<string> klassenChanged;
         public event EventHandler<string> lokalenChanged;
@@ -38,8 +39,8 @@ namespace rooster_2025_6inco
             }
 
             comboLeerkracht.Location = new Point(0, 0);
-            comboklassen.Location = new Point(100, 0);
-            combolokalen.Location = new Point(200, 0);
+            comboklassen.Location = new Point(350, 0);
+            combolokalen.Location = new Point(700, 0);
 
             layout.Controls.Add(comboLeerkracht);
             layout.Controls.Add(comboklassen);
