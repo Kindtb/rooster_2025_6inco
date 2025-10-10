@@ -22,6 +22,18 @@ namespace rooster_2025_6inco
             ComboBox comboLeerkracht = new ComboBox();
             ComboBox comboklassen = new ComboBox();
             ComboBox combolokalen = new ComboBox();
+            foreach (Leerkracht leerkracht in reader.getLeerkrachten())
+            {
+                comboLeerkracht.Items.Add(leerkracht.name);
+            }
+            foreach (Klas klas in reader.getKlassen())
+            {
+                comboklassen.Items.Add(klas.name);
+            }
+            foreach (Lokaal lokaal in reader.getLokalen())
+            {
+                combolokalen.Items.Add(lokaal.name);
+            }
 
             layout.Controls.Add(comboLeerkracht);
             layout.Controls.Add(comboklassen);
