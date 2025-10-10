@@ -7,9 +7,12 @@ using System.Windows.Forms;
 
 namespace rooster_2025_6inco
 {
+     
     internal class ComboboxManager
     {
-       
+        public event EventHandler<string> leerkrachtChanged;
+
+
         public ComboboxManager(Panel layout, CsvReader reader)
         {
             List<Leerkracht> leerkrachten = reader.getLeerkrachten();
@@ -23,6 +26,10 @@ namespace rooster_2025_6inco
             layout.Controls.Add(comboLeerkracht);
             layout.Controls.Add(comboklassen);
             layout.Controls.Add(comboklassen);
+            comboLeerkracht.SelectedIndexChanged += (sender, e) =>
+            {
+                leerkrachtChanged?.Invoke(this, "DBLE");
+            };
 
 
         }
