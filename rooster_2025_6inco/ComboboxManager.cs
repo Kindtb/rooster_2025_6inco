@@ -10,13 +10,9 @@ namespace rooster_2025_6inco
      
     internal class ComboboxManager
     {
-<<<<<<< HEAD
-        public event EventHandler leerkrachtChanged;
-        public event EventHandler klassenChanged;
-        public event EventHandler lokalenChanged;
-=======
         public event EventHandler<string> leerkrachtChanged;
->>>>>>> 77055339c25b3aaf88da63f0a7858bbeafe6022d
+        public event EventHandler<string> klassenChanged;
+        public event EventHandler<string> lokalenChanged;
 
 
         public ComboboxManager(Panel layout, CsvReader reader)
@@ -51,15 +47,15 @@ namespace rooster_2025_6inco
 
             comboLeerkracht.SelectedIndexChanged += (sender, e) =>
             {
-                leerkrachtChanged?.Invoke(this, "DBLE");
+                leerkrachtChanged?.Invoke(this, comboLeerkracht.SelectedItem.ToString());
             };
             comboklassen.SelectedIndexChanged += (sender, e) =>
             {
-                klassenChanged?.Invoke(this, new EventArgs());
+                klassenChanged?.Invoke(this, comboklassen.SelectedItem.ToString());
             };
             combolokalen.SelectedIndexChanged += (sender, e) =>
             {
-                lokalenChanged ?.Invoke(this, new EventArgs());
+                lokalenChanged ?.Invoke(this, combolokalen.SelectedItem.ToString());
             };
 
 
