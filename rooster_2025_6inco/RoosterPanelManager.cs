@@ -20,6 +20,17 @@ namespace rooster_2025_6inco
                     //les[i, j] = new lesuur()
                 }
             }
+
+            comboboxManager.leerkrachtChanged += (sender, e) =>
+            {
+
+                string leerkracht = e;
+                // toon de rooster van leerkracht
+            };
         }
+
+        
     }
+
+    
 }
