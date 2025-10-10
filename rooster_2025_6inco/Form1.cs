@@ -22,6 +22,11 @@ namespace rooster_2025_6inco
 
             RoosterPanelManager roosterPanelManager = new RoosterPanelManager(layout.getRoosterPanel(), comboboxManager);
 
+            comboboxManager.leerkrachtChanged += (sender, e) =>
+            {
+                string leerkracht = "DBLE";
+                roosterPanelManager.toonLeerkrachtRooster(leerkracht);
+            };
         }
     }
 }
