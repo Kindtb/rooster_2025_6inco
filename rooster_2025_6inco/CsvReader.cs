@@ -135,10 +135,62 @@ namespace rooster_2025_6inco
 
                 if (fields.Length < 7) continue; // skip malformed lines
 
+                if (fields[2].Trim('\'') == leerkracht)
+                {
+                    Les les = new Les(fields[1].Trim('\''), fields[2].Trim('\''), fields[4].Trim('\''), fields[3].Trim('\''), int.Parse(fields[5]), int.Parse(fields[6]));
+                    lessen.Add(les);
+                }
 
-
-                return lessen;
             }
+            return lessen;
+        }
+
+        public List<Les> getLessenVoorKlas(string klas)
+        {
+            List<Les> lessen = new List<Les>();
+
+            foreach (var line in File.ReadLines(filePath))
+            {
+                // Skip empty lines
+                if (string.IsNullOrWhiteSpace(line)) continue;
+
+                // Split CSV, handle quoted commas
+                var fields = SplitCsv(line);
+
+                if (fields.Length < 7) continue; // skip malformed lines
+
+                if (fields[1].Trim('\'') == klas)
+                {
+                    Les les = new Les(fields[1].Trim('\''), fields[2].Trim('\''), fields[4].Trim('\''), fields[3].Trim('\''), int.Parse(fields[5]), int.Parse(fields[6]));
+                    lessen.Add(les);
+                }
+
+            }
+            return lessen;
+        }
+
+        public List<Les> getLessenVoorLokaal(string lokaal)
+        {
+            List<Les> lessen = new List<Les>();
+
+            foreach (var line in File.ReadLines(filePath))
+            {
+                // Skip empty lines
+                if (string.IsNullOrWhiteSpace(line)) continue;
+
+                // Split CSV, handle quoted commas
+                var fields = SplitCsv(line);
+
+                if (fields.Length < 7) continue; // skip malformed lines
+
+                if (fields[4].Trim('\'') == lokaal)
+                {
+                    Les les = new Les(fields[1].Trim('\''), fields[2].Trim('\''), fields[4].Trim('\''), fields[3].Trim('\''), int.Parse(fields[5]), int.Parse(fields[6]));
+                    lessen.Add(les);
+                }
+
+            }
+            return lessen;
         }
     }
 }
