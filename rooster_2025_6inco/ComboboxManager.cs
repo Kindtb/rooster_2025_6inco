@@ -38,13 +38,17 @@ namespace rooster_2025_6inco
                 combolokalen.Items.Add(lokaal.name);
             }
 
-            comboLeerkracht.Location = new Point(0, 0);
-            comboklassen.Location = new Point(350, 0);
-            combolokalen.Location = new Point(700, 0);
+            comboLeerkracht.Size = new Size(120, 30);
+            comboklassen.Size = new Size(120, 30);
+            combolokalen.Size = new Size(120, 30);
+
+            comboLeerkracht.Location = new Point(20, 0);
+            comboklassen.Location = new Point(160, 0);
+            combolokalen.Location = new Point(300, 0);
 
             layout.Controls.Add(comboLeerkracht);
             layout.Controls.Add(comboklassen);
-            layout.Controls.Add(comboklassen);
+            layout.Controls.Add(combolokalen);
 
             comboLeerkracht.SelectedIndexChanged += (sender, e) =>
             {
