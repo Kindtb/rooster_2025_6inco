@@ -34,7 +34,18 @@ namespace rooster_2025_6inco
 
                     string leerkracht = e;
                     List<Les> lessen = reader.getLessenVoorLeerkracht(leerkracht);
+
+                    RoosterFactory roosterFactory = new RoosterFactory();
+                    Les[,] rooster = roosterFactory.getRooster(lessen);
                     // toon de rooster van leerkracht
+
+                    for (int dag = 0; dag < 5; dag++)
+                    {
+                        for (int uur=0; uur<9; uur++)
+                        {
+                            lesLeerkracht[dag, uur].update(rooster[dag,uur]);
+                        }
+                    }
                 };
             }
 
