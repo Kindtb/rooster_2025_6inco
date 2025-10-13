@@ -21,13 +21,41 @@ namespace rooster_2025_6inco
                 {
 
                     Panel lesuurPanelLeerkracht = new Panel();
-                    lesuurPanelLeerkracht.Location = new Point(i * 50, j * 20);
-                    lesuurPanelLeerkracht.Size = new Size(50, 20);
+                    lesuurPanelLeerkracht.Location = new Point(i * 50, j * 50);
+                    lesuurPanelLeerkracht.Size = new Size(50, 50);
                     lesuurPanelLeerkracht.BorderStyle = BorderStyle.FixedSingle;
                     panel.Controls.Add(lesuurPanelLeerkracht);
 
                     Lesuur lesuurLeerkracht = new Lesuur(lesuurPanelLeerkracht);
                     lesLeerkracht[i,j] = lesuurLeerkracht;
+                }
+            }
+            for (int i = 0;i < 5; i++)
+            {
+                for(int j = 0;j < 9; j++)
+                {
+                    Panel lesuurPanelKlas = new Panel();
+                    lesuurPanelKlas.Location = new Point(i * 50 + 260, j * 50);
+                    lesuurPanelKlas.Size = new Size(50, 50);
+                    lesuurPanelKlas.BorderStyle = BorderStyle.FixedSingle;
+                    panel.Controls.Add(lesuurPanelKlas);
+
+                    Lesuur lesuurKlas = new Lesuur(lesuurPanelKlas);
+                    lesKlas[i, j] = lesuurKlas;
+                }
+            }
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = 0; j < 9; j++)
+                {
+                    Panel lesuurPanelLokaal = new Panel();
+                    lesuurPanelLokaal.Location = new Point(i * 50 + 520, j * 50);
+                    lesuurPanelLokaal.Size = new Size(50, 50);
+                    lesuurPanelLokaal.BorderStyle = BorderStyle.FixedSingle;
+                    panel.Controls.Add(lesuurPanelLokaal);
+
+                    Lesuur lesuurLokaal = new Lesuur(lesuurPanelLokaal);
+                    lesLokaal[i, j] = lesuurLokaal;
                 }
             }
 
