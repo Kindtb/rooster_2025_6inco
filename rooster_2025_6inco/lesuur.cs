@@ -24,6 +24,7 @@ namespace rooster_2025_6inco
         public Lesuur(Panel panel, Klas klas, Leerkracht leerkracht, Lokaal lokaal)
         {
             init(panel);
+
             lblKlas.Text = klas.ToString();
             lblLeerkracht.Text = leerkracht.ToString();
             lblLokaal.Text = lokaal.ToString();
@@ -36,6 +37,19 @@ namespace rooster_2025_6inco
             panel.Controls.Add(lblKlas);
             panel.Controls.Add(lblLeerkracht);
             panel.Controls.Add(lblLokaal);
+            int width = panel.Width;
+            int height = panel.Height / 4;
+            lblKlas.Size = new Size(width, height);
+            lblKlas.Location = new Point(0, 0);
+            lblKlas.TextAlign = ContentAlignment.MiddleCenter;
+
+            lblLeerkracht.Size = new Size(width, height);
+            lblLeerkracht.Location = new Point(0, height);
+            lblLeerkracht.TextAlign = ContentAlignment.MiddleCenter;
+
+            lblLokaal.Size = new Size(width, height);
+            lblLokaal.Location = new Point(0, 2* height);
+            lblLokaal.TextAlign = ContentAlignment.MiddleCenter;
         }
 
         public void update(Les les)
