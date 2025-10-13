@@ -10,13 +10,10 @@ namespace rooster_2025_6inco
      
     internal class ComboboxManager
     {
-<<<<<<< HEAD
-        public event EventHandler leerkrachtChanged;
-        public event EventHandler klassenChanged;
-        public event EventHandler lokalenChanged;
-=======
+
         public event EventHandler<string> leerkrachtChanged;
->>>>>>> 77055339c25b3aaf88da63f0a7858bbeafe6022d
+        public event EventHandler<string> klassenChanged;
+        public event EventHandler<string> lokalenChanged;
 
 
         public ComboboxManager(Panel layout, CsvReader reader)
@@ -41,25 +38,29 @@ namespace rooster_2025_6inco
                 combolokalen.Items.Add(lokaal.name);
             }
 
-            comboLeerkracht.Location = new Point(0, 0);
-            comboklassen.Location = new Point(100, 0);
-            combolokalen.Location = new Point(200, 0);
+            comboLeerkracht.Size = new Size(120, 30);
+            comboklassen.Size = new Size(120, 30);
+            combolokalen.Size = new Size(120, 30);
+
+            comboLeerkracht.Location = new Point(20, 0);
+            comboklassen.Location = new Point(160, 0);
+            combolokalen.Location = new Point(300, 0);
 
             layout.Controls.Add(comboLeerkracht);
             layout.Controls.Add(comboklassen);
-            layout.Controls.Add(comboklassen);
+            layout.Controls.Add(combolokalen);
 
             comboLeerkracht.SelectedIndexChanged += (sender, e) =>
             {
-                leerkrachtChanged?.Invoke(this, "DBLE");
+                leerkrachtChanged?.Invoke(this, comboLeerkracht.SelectedItem.ToString());
             };
             comboklassen.SelectedIndexChanged += (sender, e) =>
             {
-                klassenChanged?.Invoke(this, new EventArgs());
+                klassenChanged?.Invoke(this, comboklassen.SelectedItem.ToString());
             };
             combolokalen.SelectedIndexChanged += (sender, e) =>
             {
-                lokalenChanged ?.Invoke(this, new EventArgs());
+                lokalenChanged ?.Invoke(this, combolokalen.SelectedItem.ToString());
             };
 
 

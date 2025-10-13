@@ -20,17 +20,9 @@ namespace rooster_2025_6inco
             CsvReader reader = new CsvReader("data/rooster.txt");
             ComboboxManager comboboxManager = new ComboboxManager(layout.getComboboxPanel(), reader);
 
-            RoosterPanelManager roosterPanelManager = new RoosterPanelManager(layout.getRoosterPanel(), comboboxManager);
+            RoosterPanelManager roosterPanelManager = new RoosterPanelManager(layout.getRoosterPanel(), comboboxManager, reader);
 
-<<<<<<< HEAD
-            comboboxManager.leerkrachtChanged += (sender, e) =>
-            {
-                string leerkracht = "DBLE";
-               // roosterPanelManager.toonLeerkrachtRooster(leerkracht);
-            };
-=======
-            
->>>>>>> 77055339c25b3aaf88da63f0a7858bbeafe6022d
+
         }
     }
 }
