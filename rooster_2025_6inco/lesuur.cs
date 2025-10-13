@@ -16,17 +16,31 @@ namespace rooster_2025_6inco
 
         public Lesuur(Panel panel, Klas klas, Leerkracht leerkracht, Lokaal lokaal)
         {
+
+            int width = panel.Width;
+            int height = panel.Height / 4;
+
             lblKlas.Text = klas.ToString();
             lblLeerkracht.Text = leerkracht.ToString();
             lblLokaal.Text = lokaal.ToString();
 
-            
+            lblKlas.Size = new Size(width, height);
+            lblKlas.Location = new Point(panel.Location.X, panel.Location.Y + height);
+            lblKlas.TextAlign = ContentAlignment.MiddleCenter;
+
+            lblLeerkracht.Size = new Size(width, height);
+            lblLeerkracht.Location = new Point(panel.Location.X, lblKlas.Location.Y + height);
+            lblLeerkracht.TextAlign = ContentAlignment.MiddleCenter;
+
+            lblLokaal.Size = new Size(width, height);
+            lblLokaal.Location = new Point(panel.Location.X, lblLeerkracht.Location.Y + height);
+            lblLokaal.TextAlign = ContentAlignment.MiddleCenter;
 
             panel.Controls.Add(lblKlas);
             panel.Controls.Add(lblLeerkracht);
             panel.Controls.Add(lblLokaal);
-
             
+
         }
     }
 }
