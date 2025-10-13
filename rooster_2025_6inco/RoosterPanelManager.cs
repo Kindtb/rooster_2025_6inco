@@ -11,6 +11,8 @@ namespace rooster_2025_6inco
     internal class RoosterPanelManager
     {
         Lesuur[,] lesLeerkracht = new Lesuur[5, 9];
+        Lesuur[,] lesKlas = new Lesuur[5, 9];
+        Lesuur[,] lesLokaal = new Lesuur[5, 9];
         public RoosterPanelManager(Panel panel, ComboboxManager comboboxManager, CsvReader reader)
         {
             for (int i = 0; i < 5; i++)
@@ -18,14 +20,14 @@ namespace rooster_2025_6inco
                 for (int j = 0; j < 9; j++)
                 {
 
-                    Panel lesuurPanel = new Panel();
-                    lesuurPanel.Location = new Point(i * 50, j * 20);
-                    lesuurPanel.Size = new Size(50, 20);
-                    lesuurPanel.BorderStyle = BorderStyle.FixedSingle;
-                    panel.Controls.Add(lesuurPanel);
+                    Panel lesuurPanelLeerkracht = new Panel();
+                    lesuurPanelLeerkracht.Location = new Point(i * 50, j * 20);
+                    lesuurPanelLeerkracht.Size = new Size(50, 20);
+                    lesuurPanelLeerkracht.BorderStyle = BorderStyle.FixedSingle;
+                    panel.Controls.Add(lesuurPanelLeerkracht);
 
-                    Lesuur lesuur = new Lesuur(lesuurPanel);
-                    lesLeerkracht[i,j] = lesuur;
+                    Lesuur lesuurLeerkracht = new Lesuur(lesuurPanelLeerkracht);
+                    lesLeerkracht[i,j] = lesuurLeerkracht;
                 }
             }
 
