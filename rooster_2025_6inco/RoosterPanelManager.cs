@@ -29,16 +29,30 @@ namespace rooster_2025_6inco
                     Lesuur lesuurLeerkracht = new Lesuur(lesuurPanelLeerkracht);
                     lesLeerkracht[i,j] = lesuurLeerkracht;
                 }
-
-
-                comboboxManager.leerkrachtChanged += (sender, e) =>
-                {
-
-                    string leerkracht = e;
-                    List<Les> lessen = reader.getLessenVoorLeerkracht(leerkracht);
-                    // toon de rooster van leerkracht
-                };
             }
+
+
+            comboboxManager.leerkrachtChanged += (sender, e) =>
+            {
+
+                string leerkracht = e;
+                List<Les> lessen = reader.getLessenVoorLeerkracht(leerkracht);
+
+                RoosterFactory roosterFactory = new RoosterFactory();
+                Les[,] rooster = roosterFactory.getRooster(lessen);
+                // toon de rooster van leerkracht
+
+                for (int dag = 0; dag < 5; dag++)
+                {
+                    for (int uur = 0; uur < 9; uur++)
+                    {
+                        if (rooster[dag,uur] != null)
+                        {
+                            lesLeerkracht[dag, uur].update(rooster[dag, uur]);
+                        }
+                    }
+                }
+            };
 
 
         }
